@@ -12,11 +12,11 @@ u8 node_index_for_end_node = 10;
 u8 extra_node_flag = 0;
 u8 current_frequency = 0;
 Link_Queue * ptr_link_queue;
-
+char ret_words[100];
 
 int main(void)
 {
-	char ret_words[200];
+	
 //	MPU9250_DATD mpu_data;
 	MPU9250_RAW_DATD mpu_raw_data;
 	u8 ret = 0;
@@ -50,7 +50,7 @@ int main(void)
 		MPU_Get_9_Axis_Raw(&mpu_raw_data);
 		push_back_node(ptr_link_queue,&mpu_raw_data);
 //		MPU9250_send_data(mpu_raw_data.ax,mpu_raw_data.ay,mpu_raw_data.az,mpu_raw_data.gx,mpu_raw_data.gy,mpu_raw_data.gz,mpu_raw_data.mx,mpu_raw_data.my,mpu_raw_data.mz);
-		delay_ms(1);
+		delay_ms(10);
 	}
 
 }
